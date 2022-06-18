@@ -118,7 +118,8 @@ savepoint abc;
 
 -- savepoint sikintisi varsa -> SET autocommit=0; 
 -- ayarlar sql execution auto commit tiki kaldr
-SET autocommit=0; 
+
+SET SQL_SAFE_UPDATES = 0;
 select * from ogrenciler;
 
 delete from ogrenciler;
