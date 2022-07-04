@@ -8,6 +8,7 @@
     GROUP BY genelde, AVG(),COUNT(),MAX(),MIN() ve SUM() gibi aggregate 
     fonksiyonları ile birlikte kullanılır.
 ==============================================================================*/ 
+create database batch59;
 use batch59;
     
 CREATE TABLE manav 
@@ -49,8 +50,8 @@ group by urun_adi;
 -- MAX urun miktarlarini, MAX urun miktarina göre sıralayarak listeyen sorguyu yazınız.
 select urun_adi,min(urun_miktari),max(urun_miktari)
 from manav 
-where urun_adi is not null
-group by urun_adi;
+group by urun_adi
+Having min(urun_miktari)>2;
 
 
 
